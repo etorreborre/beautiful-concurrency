@@ -1,0 +1,14 @@
+:set prompt "λ> "
+:set -XOverloadedStrings
+:set -XScopedTypeVariables
+:set -XFlexibleContexts
+:set -Wall
+:set -fno-warn-type-defaults
+:set -fno-warn-unused-do-bind
+:set -fobject-code
+import Protolude
+:def hoogle \str -> return $ ":!hoogle --count=50 \"" ++ str ++ "\""
+:def pointfree \str -> return $ ":!pointfree \"" ++ str ++ "\""
+:def pointful \str -> return $ ":!pointful \"" ++ str ++ "\""
+:set -fwarn-unused-binds -fwarn-unused-imports
+:set -isrc
