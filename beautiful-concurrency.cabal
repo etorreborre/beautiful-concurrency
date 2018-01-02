@@ -1,0 +1,84 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: a27bfea767b5096f9b2152306b70f706470dd76d4f4f80ec574efefbfd359a3f
+
+name:           beautiful-concurrency
+version:        0.1.0.0
+synopsis:       Santa example from "beautiful concurrency" (Simon Peyton-Jones)
+category:       concurrency
+maintainer:     etorreborre@yahoo.com
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+
+source-repository head
+  type: git
+  location: https://github.com/etorreborre/beautiful-concurrency
+
+library
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wall -XNoImplicitPrelude
+  build-depends:
+      base >=4.7 && <5
+    , protolude
+    , random
+    , stm
+    , text
+  exposed-modules:
+      Beautiful.Concurrency.Santa
+  other-modules:
+      Paths_beautiful_concurrency
+  default-language: Haskell2010
+
+executable beautiful-concurrency
+  main-is: Main.hs
+  hs-source-dirs:
+      main
+      src
+  ghc-options: -Wall -Wall -XNoImplicitPrelude
+  build-depends:
+      base >=4.7 && <5
+    , beautiful-concurrency
+    , protolude
+    , stm
+    , text
+  other-modules:
+      Beautiful.Concurrency.Santa
+      Paths_beautiful_concurrency
+  default-language: Haskell2010
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: test.hs
+  hs-source-dirs:
+      test
+      src
+  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N -fno-warn-orphans -fno-warn-missing-signatures -XNoImplicitPrelude
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , checkers
+    , either
+    , hedgehog
+    , hedgehog-quickcheck
+    , protolude
+    , raw-strings-qq
+    , stm
+    , string-convert
+    , tasty
+    , tasty-auto
+    , tasty-hedgehog
+    , tasty-hunit
+    , tasty-quickcheck
+    , tasty-th
+    , text
+  other-modules:
+      Test.Beautiful.Concurrency.SantaSpec
+      Test.Tasty.Checks
+      Test.Tasty.Extensions
+      Beautiful.Concurrency.Santa
+      Paths_beautiful_concurrency
+  default-language: Haskell2010

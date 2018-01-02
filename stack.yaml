@@ -1,0 +1,14 @@
+resolver: lts-10.0
+
+packages:
+- '.'
+
+extra-deps:
+  - tasty-hedgehog-0.1.0.1
+  - string-convert-4.0.0.1
+
+extra-package-dbs: []
+
+nix:
+  enable: false
+  shell-file: shell.nix

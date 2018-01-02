@@ -1,0 +1,66 @@
+name: beautiful-concurrency
+version: 0.1.0.0
+synopsis: Santa example from "beautiful concurrency" (Simon Peyton-Jones)
+maintainer: etorreborre@yahoo.com
+git: https://github.com/etorreborre/beautiful-concurrency
+category: concurrency
+
+ghc-options: -Wall
+
+dependencies:
+  - base >= 4.7 && < 5
+  - stm
+  - text
+
+library:
+  source-dirs: src
+
+  dependencies:
+    - protolude
+    - random
+
+  exposed-modules:
+    - Beautiful.Concurrency.Santa
+
+  ghc-options: -Wall -XNoImplicitPrelude
+
+executable:
+  main: Main.hs
+
+  source-dirs:
+    - main
+    - src
+  dependencies:
+    - beautiful-concurrency
+    - protolude
+
+  ghc-options: -Wall -XNoImplicitPrelude
+
+tests:
+  spec:
+    main: test.hs
+
+    source-dirs:
+      - test
+      - src
+
+    dependencies:
+      - checkers
+      - either
+      - hedgehog
+      - hedgehog-quickcheck
+      - protolude
+      - QuickCheck
+      - raw-strings-qq
+      - stm
+      - string-convert
+      - tasty
+      - tasty-auto
+      - tasty-quickcheck
+      - tasty-hedgehog
+      - tasty-th
+      - tasty-hunit
+      - tasty-th
+
+
+    ghc-options: -threaded -rtsopts -with-rtsopts=-N -fno-warn-orphans -fno-warn-missing-signatures -XNoImplicitPrelude
