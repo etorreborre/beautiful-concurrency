@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: a27bfea767b5096f9b2152306b70f706470dd76d4f4f80ec574efefbfd359a3f
+-- hash: d119448425faa6339601e49772361f0d1c8552e0bd015d640c7dd2c1fa7f9405
 
 name:           beautiful-concurrency
 version:        0.1.0.0
@@ -43,6 +43,7 @@ executable beautiful-concurrency
       base >=4.7 && <5
     , beautiful-concurrency
     , protolude
+    , random
     , stm
     , text
   other-modules:

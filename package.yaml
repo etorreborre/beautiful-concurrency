@@ -33,6 +33,7 @@ executable:
   dependencies:
     - beautiful-concurrency
     - protolude
+    - random
 
   ghc-options: -Wall -XNoImplicitPrelude
 
